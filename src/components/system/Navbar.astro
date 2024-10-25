@@ -1,0 +1,67 @@
+---
+const { pathname } = Astro.url
+
+const routes = [
+    {
+        id: 1,
+        name: "Home",
+        href: "/",
+        active: pathname === "/"
+    },
+    {
+        id: 2,
+        name: "Projects",
+        href: "/projects",
+        active: pathname === "/projects"
+    },
+    {
+        id: 3,
+        name: "About",
+        href: "/about",
+        active: pathname === "/about"
+
+    },
+    {
+        id: 4,
+        name: "Contact",
+        href: "/contact",
+        active: pathname === "/contact"
+    },
+]
+
+import GithubIcon from '@/components/icons/GithubIcon.astro'
+import LinkedinIcon from '@/components/icons/LinkedinIcon.astro'
+import MoonIcon from '@/components/icons/MoonIcon.astro'
+import PanelLeftClose from '@/components/icons/PanelLeftClose.astro'
+---
+<div class="">
+    <div class="w-full py-4 flex items-center justify-end md:justify-between">
+        <ul class="hidden md:flex items-center gap-4 text-xs font-medium">
+            {
+               routes.map((route) => (
+                <li>
+                    <a href={route.href} class={`${route.active ? 'underline' : 'hover:underline'}`}>{route.name}</a>
+                </li>
+                ))
+            }
+        </ul>
+        <div class="flex items-center gap-4">
+            <div class="flex items-center gap-2">
+                <a href="" class="w-7 h-7 rounded-md bg-[var(--accent-backgroud-200)] flex items-center justify-center">
+                    <GithubIcon />
+                </a>
+                <a href="" class="w-7 h-7 rounded-md bg-[var(--accent-backgroud-200)] flex items-center justify-center">
+                    <LinkedinIcon />
+                </a>
+            </div>
+            <div class="flex items-center gap-2">
+                <button class="w-7 h-7 rounded-full bg-black flex items-center justify-center">
+                    <MoonIcon />
+                </button>
+                <button class="md:hidden flex items-center justify-center w-7 h-7 rounded-md bg-[var(--accent-backgroud-200)]">
+                    <PanelLeftClose />
+                </button>
+            </div>
+        </div>
+    </div>
+</div>

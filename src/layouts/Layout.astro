@@ -3,6 +3,17 @@ interface Props {
 	title: string;
 }
 
+import '@fontsource/source-serif-pro/200.css'
+import '@fontsource/source-serif-pro/300.css'
+import '@fontsource/source-serif-pro/400.css'
+import '@fontsource/source-serif-pro/600.css'
+import '@fontsource/source-serif-pro/700.css'
+import '@fontsource/source-serif-pro/900.css'
+import '@fontsource-variable/jetbrains-mono';
+
+import { ClientRouter } from 'astro:transitions'
+import Navbar from '@/components/system/Navbar.astro';
+
 const { title } = Astro.props;
 ---
 
@@ -15,9 +26,22 @@ const { title } = Astro.props;
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<meta name="generator" content={Astro.generator} />
 		<title>{title}</title>
+		<ClientRouter />
 	</head>
 	<body>
-		<slot />
+		<div class="w-full md:max-w-2xl mx-auto px-4">
+			<Navbar />
+			<slot />
+			<footer class="my-5 space-y-2">
+				<div>
+	
+				</div>
+				<hr>
+				<div>
+					<p class="text-neutral-500 text-xs">© 2024 Luis Montiel. All rights reserved.</p>
+				</div>
+			</footer>
+		</div>
 	</body>
 </html>
 <style is:global>
@@ -31,20 +55,12 @@ const { title } = Astro.props;
 			rgb(var(--accent-light)) 30%,
 			white 60%
 		);
+		--background: #FAF9F6;
+		--accent-backgroud-200: rgba(244, 242, 238, 1);
+		--accent-background-400: rgba(244, 242, 238, 1);
+		--accent-background-600: rgba(232, 229, 223, 1);
 	}
 	html {
-		font-family: system-ui, sans-serif;
-		background: #13151a;
-	}
-	code {
-		font-family:
-			Menlo,
-			Monaco,
-			Lucida Console,
-			Liberation Mono,
-			DejaVu Sans Mono,
-			Bitstream Vera Sans Mono,
-			Courier New,
-			monospace;
+		background: var(--background);
 	}
 </style>

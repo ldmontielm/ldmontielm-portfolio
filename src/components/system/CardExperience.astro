@@ -1,0 +1,27 @@
+---
+import type { CollectionEntry } from 'astro:content'
+
+interface Props {
+    experience: CollectionEntry<'experiences'>
+}
+
+const { experience } = Astro.props
+const entity  = experience.data
+---
+
+<div class="w-full p-3 rounded-md bg-[var(--accent-background-400)]">
+    <div>
+        <p class="text-neutral-500 text-xs">{entity.starting_year} - {entity.ending_year}</p>
+    </div>
+    <div class="space-y-2">
+        <h3 class="font-semibold text-2xl">{entity.title}</h3>
+        <p class="text-neutral-500 text-xs">{entity.description}</p>
+    </div>
+    <div class="mt-5 flex items-center gap-2 flex-wrap">
+        {
+            entity.lenguages.map((lenguage: string) => (
+                <p class="text-xs font-mono font-medium">{lenguage}</p>
+            ))
+        }
+    </div>
+</div>

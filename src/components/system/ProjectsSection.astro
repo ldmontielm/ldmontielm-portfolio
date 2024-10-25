@@ -1,0 +1,28 @@
+---
+import { getCollection } from "astro:content"
+import Card from "@/pages/projects/components/Card.astro"
+import ArrowViewProject from "@/components/icons/ArrowViewProject.astro"
+
+
+const allProjects = await getCollection('projects')
+---
+
+<section>
+    <div class="space-y-3">
+        <h3 class="text-xl font-medium">Projects</h3>
+        <hr>
+    </div>
+    <div class="mt-5">
+        {
+            allProjects.map((project) => (
+                <Card project={project} />
+            ))
+        }
+    </div>
+    <div class="w-full flex items-center justify-center mt-5">
+        <a href="/projects" class="w-fit rounded-full px-3 py-2 text-black flex items-center gap-2 hover:bg-[var(--accent-background-400)]">
+            <span class="text-xs font-medium">View projects</span>
+            <ArrowViewProject />
+        </a>
+    </div>
+</section>
