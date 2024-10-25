@@ -7,19 +7,19 @@ interface Props {
 }
 
 const { project } = Astro.props
-const entity = project.data
+const { deploy, description, title, type, category } = project.data
 ---
 
 <div class="p-2.5 rounded border-nuetral-500 bg-[var(--accent-background-400)] hover:bg-[var(--accent-background-600)]">
     <div class="flex flex-col gap-2">
-        <p class="text-xs text-neutral-500">{`${entity.type} - ${entity.category}`}</p>
+        <p class="text-xs text-neutral-500">{`${type} - ${category}`}</p>
         <a transition:name={`slug-${project.slug}`} href={`/projects/${project.slug}`} class="text-2xl font-medium">
-            {entity.title}
+            {title}
         </a>
-        <p class="text-neutral-500 text-xs">{entity.description}</p>
+        <p class="text-neutral-500 text-xs">{description}</p>
     </div>
     <div class="mt-3">
-        <a href={entity.deploy} target="_blank" class="flex items-center gap-2">
+        <a href={deploy} target="_blank" class="flex items-center gap-2">
             <span class="text-xs font-medium">Visit project</span>
             <ArrowViewProject />
         </a>

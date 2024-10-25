@@ -16,8 +16,6 @@ export const getStaticPaths = (async () => {
     }))
 }) satisfies GetStaticPaths;
 
-
-const { slug } = Astro.params
 const { project } = Astro.props
 
 const entity = project.data
