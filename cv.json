@@ -1,0 +1,86 @@
+{
+    "basics": {
+      "name": "Luis Montiel",
+      "label": "Software developer specialized in creating modern and efficient solutions.",
+      "image": "",
+      "email": "ld.montielm@gmail.com",
+      "phone": "(+57) 3245705946",
+      "url": "",
+      "working": "Currently Working",
+      "summary": "Welcome! I'm Luis Montiel, software developer specialized in creating modern and efficient solutions. Explore my projects and get to know my work, if you need me just get in touch.",
+      "location": {
+        "address": "",
+        "postalCode": "",
+        "city": "Medellín",
+        "countryCode": "COL",
+        "region": "Antioquia"
+      },
+      "profiles": [{
+        "network": "Github",
+        "username": "ldmontielm",
+        "url": "https://github.com/ldmontielm"
+      }, {
+        "network": "Linkedin",
+        "username": "Luis David Montiel Montes",
+        "url": "https://www.linkedin.com/in/ld-montiel/"
+      }]
+    },
+    "works": [
+        {
+            "company": "Silverbox SAS",
+            "position": "Junior Software Developer",
+            "img": "/companies/silverbox.png",
+            "remote": "Remotly",
+            "country": "Medellín",
+            "region": "Antioquia",
+            "type": "Full time",
+            "url": "https://www.silverbox.com.co/",
+            "startDate": "2024-01-17",
+            "endDate": null,
+            "summary": "I've specialized in developing RESTful APIs with FastAPI, as well as deploying containers on GCP using Cloud Run and orchestrating them with Kubernetes in Google Kubernetes Engine (GKE). Additionally, I focus on developing web applications with Django and creating interfaces using the React ecosystem.",
+            "highlights": [
+                "Python", "Django", "Javascript", "Typescript", "React JS", "Next JS", "Kubernetes", "GKE", "Docker"
+            ]
+        }
+    ],
+    "volunteer": [],
+    "education": [],
+    "awards": [],
+    "certificates": [{
+      "name": "Certificate",
+      "date": "2021-11-07",
+      "issuer": "Company",
+      "url": "https://certificate.com"
+    }],
+    "publications": [{
+      "name": "Publication",
+      "publisher": "Company",
+      "releaseDate": "2014-10-01",
+      "url": "https://publication.com",
+      "summary": "Description…"
+    }],
+    "skills": [{
+      "name": "Web Development",
+      "level": "Master",
+      "keywords": [
+        "HTML",
+        "CSS",
+        "JavaScript"
+      ]
+    }],
+    "languages": [{
+      "language": "English",
+      "fluency": "Native speaker"
+    }],
+    "interests": [{
+      "name": "Wildlife",
+      "keywords": [
+        "Ferrets",
+        "Unicorns"
+      ]
+    }],
+    "references": [{
+      "name": "Jane Doe",
+      "reference": "Reference…"
+    }]
+  }

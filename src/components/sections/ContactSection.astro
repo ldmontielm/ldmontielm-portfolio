@@ -1,0 +1,18 @@
+---
+import { basics } from '@cv'
+import ArrowViewProject from '@/components/icons/ArrowViewProject.astro'
+
+const { email } = basics
+---
+<section>
+    <div class="flex items-center justify-center">
+        <div class="my-5 w-full max-w-sm flex flex-col items-center gap-2">
+            <h1 class="text-4xl text-center font-bold">Have a project? Let's work together</h1>
+            <p class="text-neutral-500 text-center text-sm">Catch up for a chat about your project, ideas, or anything else. I'm here to evaluate your business!</p>
+            <a href={`mailto:${email}`} target="_blank" class="w-fit rounded-full px-3 py-2 text-black flex items-center gap-2 hover:bg-[var(--accent-background-400)]">
+                <span class="text-xs font-medium">Connect with me</span>
+                <ArrowViewProject />
+            </a>
+        </div>
+    </div>
+</section>

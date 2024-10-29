@@ -2,7 +2,10 @@
 import type { GetStaticPaths } from "astro";
 import { getCollection, render } from "astro:content";
 import Layout from "@/layouts/Layout.astro";
-import ArrowViewProject from "@/components/icons/ArrowViewProject.astro";
+import Github from "@/components/icons/Github.astro";
+import Arrow from "@/components/icons/Arrow.astro";
+
+export const prerender = true
 
 export const getStaticPaths = (async () => {
     const allProjects = await getCollection('projects')    
@@ -23,21 +26,24 @@ const entity = project.data
 const { Content } = await render(project)
 ---
 <Layout title={`${project.data.title} - Luis Montiel`}>
-    <div class="my-5 space-y-2">
+    <div class="my-5 space-y-2 mb-10">
         <div>
             <p class="text-xs text-neutral-500">{`${entity.type} - ${entity.category}`}</p>
             <h3 transition:name={`slug-${project.slug}`} class="text-3xl font-bold">{entity.title}</h3>
         </div>
         <div>
-            <div class="mt-3">
-                <a href={entity.deploy} target="_blank" class="flex items-center gap-2 bg-white px-3 w-fit py-1.5">
+            <div class="mt-3 flex items-center gap-2">
+                <a href={entity.github} data-tippy-content="Github Repository" target="_blank" class="w-7 h-7 rounded-full bg-[var(--accent-backgroud-200)] hover:bg-[var(--accent-background-600)] flex items-center justify-center">
+                    <Github />
+                </a>
+                <a href={entity.deploy} target="_blank" class="flex items-center gap-2 bg-black rounded-full text-[var(--background)] px-3 w-fit py-1.5">
                     <span class="text-xs font-medium">Visit project</span>
-                    <ArrowViewProject />
+                    <Arrow />
                 </a>
             </div>
         </div>
-        <div class="prose">
-            <Content />
-        </div>
+    </div>
+    <div class="prose">
+        <Content />
     </div>
 </Layout>

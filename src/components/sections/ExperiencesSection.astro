@@ -1,0 +1,24 @@
+---
+import ArrowViewProject from '@/components/icons/ArrowViewProject.astro';
+import CardExperience from '@/components/system/CardExperience.astro';
+import Subtitle from '@/components/ui/Subtitle.astro';
+
+import { works } from '@cv'
+---
+
+<section>
+    <Subtitle subtitle='Experiences' />
+    <div class="my-5">
+        {
+            works.map((work) => (
+                <CardExperience work={work} />
+            ))
+        }
+    </div>
+    <div class="w-full flex items-center justify-center mt-5">
+        <a href="/resumen.pdf" target="_blank" class="w-fit rounded-full px-3 py-2 text-black flex items-center gap-2 hover:bg-[var(--accent-background-400)]">
+            <span class="text-xs font-medium">View full resumen</span>
+            <ArrowViewProject />
+        </a>
+    </div>
+</section>

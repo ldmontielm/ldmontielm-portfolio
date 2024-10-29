@@ -4,10 +4,11 @@ deploy: "https://rick-and-morty-app-ten-iota.vercel.app/"
 description: "This project is a web application that allows you to explore characters, locations and episodes from the Rick and Morty universe, developed to demonstrate the integration of Next.js, React, TypeScript, TanStack Query, Shadcn UI and Tailwind CSS in a modern project."
 type: "Web Project"
 category: "Frontend"
+github: "https://github.com/ldmontielm/rick-and-morty-app.git"
 ---
 Este proyecto es una aplicación web que permite explorar personajes, ubicaciones y episodios del universo de Rick and Morty, desarrollado para demostrar la integración de Next.js 14.2.15, React, TypeScript, TanStack Query, Shadcn UI y Tailwind CSS en un proyecto moderno. Esta es la primera versión del proyecto y en el futuro se le estarán agregando nuevas funcionalidades.
-## 🚀 Tecnologías Utilizadas
 
+## 🚀 Tecnologías Utilizadas
 - **Next.js (v14.2.15)**: Utilizado como el framework principal para el proyecto, aprovechando su arquitectura de páginas y rutas dinámicas, junto con las funcionalidades de server-side rendering (SSR) y static site generation (SSG).
 
 - **React**: Utilizado como la biblioteca de interfaces de usuario, creando componentes reutilizables y gestionando el estado local de manera eficiente.
