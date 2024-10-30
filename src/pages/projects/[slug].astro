@@ -23,12 +23,12 @@ const { project } = Astro.props
 
 const entity = project.data
 
-const { Content } = await render(project)
+const { Content } = await project.render()
 ---
 <Layout title={`${project.data.title} - Luis Montiel`}>
     <div class="my-5 space-y-2 mb-10">
         <div>
-            <p class="text-xs text-neutral-500">{`${entity.type} - ${entity.category}`}</p>
+            <p class="text-sm text-neutral-500">{`${entity.type} - ${entity.category}`}</p>
             <h3 transition:name={`slug-${project.slug}`} class="text-3xl font-bold">{entity.title}</h3>
         </div>
         <div>

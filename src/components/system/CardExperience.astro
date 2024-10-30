@@ -28,30 +28,21 @@ const difference = getTimeDifference(startdate, enddate)
         </div>
     </div>
     <div class="col-start-1 col-end-6 sm:col-start-2 md:col-end-9">
-        <div class="flex flex-col space-y-3">
-            <div>
-                <a href={work.url} target="_blank" class="hover:underline">
-                    <h4 class="text-xs font-bold">{ work.company }</h4>
-                </a>
-                <p class="text-xs text-neutral-500 capitalize">{difference}</p>
-            </div>
-            <div>
-                <p class="text-xs text-neutral-500 italic">{work.remote}</p>
-            </div>
-        </div>
-        <div class="mt-3">
-            <h4 class="text-sm font-bold">{work.position}</h4>
+        <div>
+            <h4 class="text-md font-bold">{work.position} - {work.company}</h4>
             <div class="flex item-center gap-2 text-xs">
+                <p class="text-neutral-500 italic">{startdate.year()} - {work.endDate !== null ? enddate.year() : "Present"}</p>
+                <p> - </p>
                 <p class="font-semibold">{work.type}</p>
                 <p> - </p>
-                <p class="text-neutral-500 italic">{startdate.year()} - {work.endDate !== null ? enddate.year() : "Present"}</p>
+                <p class="text-xs text-neutral-500 italic">{work.remote}</p>
             </div>
             <p class="text-neutral-500 text-xs">{work.country}, {work.region}</p>
         </div>
         <div class="mt-2 prose">
-            <p class="text-xs">{work.summary}</p>
+            <p class="text-sm">{work.summary}</p>
         </div>
-        <div class="mt-2 gap-2 flex flex-wrap">
+        <div class="mt-3 gap-2 flex flex-wrap">
             {
                 work.highlights.map((skill) => (
                     <span class="px-2 text-xs font-semibold py-1 rounded bg-[var(--accent-background-600)]">{skill}</span>
